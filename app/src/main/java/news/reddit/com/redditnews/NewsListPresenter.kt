@@ -10,9 +10,9 @@ class NewsListPresenter(private val repository: NewsListRepository): NewsListCon
     lateinit var view: NewsListContract.View
     private val disposable = CompositeDisposable()
 
-    override fun onGetNewsTriggered() {
+    override fun onGetNewsTriggered(query: String) {
         disposable.add(
-                repository.getNews()
+                repository.getNews(query)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .unsubscribeOn(Schedulers.io())
