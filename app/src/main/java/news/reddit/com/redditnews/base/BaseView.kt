@@ -1,4 +1,4 @@
-package com.example.moviereview.base
+package news.reddit.com.redditnews.base
 
 import android.content.Context
 

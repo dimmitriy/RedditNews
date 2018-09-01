@@ -1,4 +1,4 @@
-package com.example.moviereview.base
+package news.reddit.com.redditnews.base
 
 import io.reactivex.ObservableTransformer
 import io.reactivex.android.schedulers.AndroidSchedulers
