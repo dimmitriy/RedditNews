@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="news_list_padding">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="layout_height">30dp</dimen>
+    <dimen name="corner_radius_medium">6dp</dimen>
+    <dimen name="reminder_card_width">100dp</dimen>
+    <dimen name="search_cinema_card_height">110dp</dimen>
+    <dimen name="img_size">80dp</dimen>
+</resources>
