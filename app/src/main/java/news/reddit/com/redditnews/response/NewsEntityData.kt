@@ -1,7 +1,5 @@
 package news.reddit.com.redditnews.response
 
-import java.util.*
-
 class NewsEntityData(val author_fullname: String,
                      val title: String,
                      val author: String,
