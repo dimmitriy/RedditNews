@@ -5,6 +5,6 @@ import news.reddit.com.redditnews.response.NewsListResponse
 
 interface NewsListRepository {
 
-    fun getNews(): Single<NewsListResponse>
+    fun getNews(query: String): Single<NewsListResponse>
 
 }
