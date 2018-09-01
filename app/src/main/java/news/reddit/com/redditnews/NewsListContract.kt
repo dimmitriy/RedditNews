@@ -14,7 +14,7 @@ class NewsListContract {
 
     interface Presenter: BasePresenter {
 
-        fun onGetNewsTriggered()
+        fun onGetNewsTriggered(query: String)
 
     }
 
