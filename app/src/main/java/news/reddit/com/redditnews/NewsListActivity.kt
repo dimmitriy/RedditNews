@@ -19,7 +19,10 @@ class NewsListActivity : AppCompatActivity(), View.OnClickListener {
         adapter = NewsListAdapter(applicationContext!!, this)
         news.adapter = adapter
 
-        val model = ViewModelProviders.of(this).get(NewsViewModel::class.java)
+        val model = ViewModelProviders.of(this,
+                NewsListViewModelFactory(application, NewsListDataSource(
+                                ServiceGenerator.getNewsApiSet(application.applicationContext))))
+                .get(NewsViewModel::class.java)
         observeViewModel(model)
     }
 
