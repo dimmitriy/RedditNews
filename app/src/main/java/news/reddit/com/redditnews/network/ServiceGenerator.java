@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 import news.reddit.com.redditnews.api.NewsApiSet;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -21,10 +22,14 @@ public class ServiceGenerator {
     private static Retrofit build;
 
     private static Retrofit getRetrofitInstance(Context context) {
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.connectTimeout(120, TimeUnit.SECONDS);
         builder.readTimeout(120, TimeUnit.SECONDS);
         builder.writeTimeout(120, TimeUnit.SECONDS);
+        builder.addInterceptor(interceptor);
 
         File cacheDir = new File(context.getCacheDir(), "cached");
         Cache cache = new Cache(cacheDir, DISK_CACHE_SIZE);
