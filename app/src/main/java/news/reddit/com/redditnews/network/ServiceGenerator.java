@@ -17,11 +17,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
 
-    private static final String BASE_API_URL = "https://www.reddit.com/r/php/";
-    private static final int DISK_CACHE_SIZE = 50 * 1024 * 1024;
-    private static Retrofit build;
+    private final String BASE_API_URL = "https://www.reddit.com/r/php/";
+    private final int DISK_CACHE_SIZE = 50 * 1024 * 1024;
+    private Retrofit build;
 
-    private static Retrofit getRetrofitInstance(Context context) {
+    private Retrofit getRetrofitInstance(Context context) {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
@@ -47,8 +47,8 @@ public class ServiceGenerator {
         return build;
     }
 
-    public static NewsApiSet getNewsApiSet(Context context) {
-        return ServiceGenerator.getRetrofitInstance(context).create(NewsApiSet.class);
+    public NewsApiSet getNewsApiSet(Context context) {
+        return new ServiceGenerator().getRetrofitInstance(context).create(NewsApiSet.class);
     }
 
 }
