@@ -1,10 +1,10 @@
 package news.reddit.com.redditnews.model
 
-import io.reactivex.Single
-import news.reddit.com.redditnews.response.NewsListResponse
+import android.arch.lifecycle.LiveData
+import news.reddit.com.redditnews.response.NewsEntity
 
 interface NewsListRepository {
 
-    fun getNews(query: String): Single<NewsListResponse>
+    fun getNews(query: String): LiveData<List<NewsEntity>>
 
 }
