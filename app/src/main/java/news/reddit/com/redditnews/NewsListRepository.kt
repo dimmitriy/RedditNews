@@ -1,4 +1,4 @@
-package news.reddit.com.redditnews.model
+package news.reddit.com.redditnews
 
 import android.arch.lifecycle.LiveData
 import news.reddit.com.redditnews.response.NewsEntity
