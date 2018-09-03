@@ -27,7 +27,7 @@ class NewsListActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun observeViewModel(viewModel: NewsViewModel) {
-        viewModel.news
+        viewModel.getNews()
                 .observe(this,
                         Observer<List<NewsEntity>>  {
                             if (it != null) {
